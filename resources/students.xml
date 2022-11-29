@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<students>
+    <student>
+        <name>Darya</name>
+        <lastname>Tsubulkina</lastname>
+        <spec>POIT</spec>
+        <age>19</age>
+    </student>
+    <student>
+        <name>Name</name>
+        <lastname>Lastname</lastname>
+        <spec>IITP</spec>
+        <age>20</age>
+    </student>
+    <student>
+        <name>Steven</name>
+        <lastname>Spielberg</lastname>
+        <spec>VMSIS</spec>
+        <age>21</age>
+    </student>
+    <student>
+        <name>Paris</name>
+        <lastname>Hilton</lastname>
+        <spec>EVS</spec>
+        <age>22</age>
+    </student>
+</students>
