@@ -6,17 +6,18 @@ import service.UserService;
 
 import java.util.Scanner;
 
-public class RegisterView implements PresentationView{
+public class RegisterView extends PresentationView{
 
     private UserService service;
 
-    public RegisterView() {
+    public RegisterView(User user) {
+        super(user);
         ServiceFactory serviceFactory = ServiceFactory.getInstance();
         service = serviceFactory.getApplianceService();
     }
 
     @Override
-    public PresentationView show(User user) {
+    public PresentationView show() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter login");
         String login = scanner.nextLine();
@@ -29,10 +30,11 @@ public class RegisterView implements PresentationView{
             case "2" -> permission = "R";
             default -> throw new IllegalArgumentException();
         };
+        User user  = new User();
         user.setPermission(permission);
         user.setLogin(login);
         user.setPassword(password);
         service.registrationUser(user);
-        return new LoginView();
+        return new LoginView(new User());
     }
 }

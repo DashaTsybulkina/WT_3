@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<students>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><students>
     <student>
         <name>Darya</name>
         <lastname>Tsubulkina</lastname>
@@ -24,4 +23,4 @@
         <spec>EVS</spec>
         <age>22</age>
     </student>
-</students>
+<student><name>dar</name><lastname>petrovich</lastname><spec>IPOIT</spec><age>12</age></student></students>

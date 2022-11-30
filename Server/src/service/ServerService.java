@@ -5,15 +5,16 @@ import entity.User;
 
 import java.util.List;
 
-public interface UserService {
-    User login(User user);
-    void registrationUser(User user);
-
+public interface ServerService {
     boolean edit(Student newValue);
 
     List<Student> getAll();
 
-    List<Student> get(String lastname);
+    List<Student> get(String lastName);
 
     boolean create(Student student);
+
+    User login(User user);
+
+    User register(User user);
 }

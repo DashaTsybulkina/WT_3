@@ -10,12 +10,12 @@ public class Presentation {
     public Presentation() {
         this.currentUser = new User();
         this.currentUser.setPermission("");
-        this.view = new GuestView();
+        this.view = new GuestView(currentUser);
     }
 
     public void show() {
         while (view != null) {
-            view = view.show(currentUser);
+            view = view.show();
         }
     }
 }

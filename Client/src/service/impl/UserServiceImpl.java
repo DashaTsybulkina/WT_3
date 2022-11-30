@@ -2,6 +2,7 @@ package service.impl;
 
 import dao.DaoFactory;
 import dao.UserDao;
+import entity.Student;
 import entity.User;
 import org.xml.sax.SAXException;
 import service.UserService;
@@ -15,23 +16,35 @@ public class UserServiceImpl implements UserService {
     private final UserDao userDAO = daoFactory.getApplianceDAO();
 
     @Override
-    public User checkUser(User user) {
+    public User login(User user) {
         User editUser = null;
-        try {
-            editUser = userDAO.checkUser(user);
-        } catch (ParserConfigurationException | IOException | SAXException e) {
-            e.printStackTrace();
-        }
+        editUser = userDAO.login(user);
         return editUser;
 
     }
 
     @Override
     public void registrationUser(User user) {
-        try {
-            userDAO.registration(user);
-        } catch (ParserConfigurationException | IOException | SAXException e) {
-            e.printStackTrace();
-        }
+        userDAO.registration(user);
+    }
+
+    @Override
+    public boolean edit(Student newValue) {
+        return userDAO.edit(newValue);
+    }
+
+    @Override
+    public List<Student> getAll() {
+        return userDAO.getAll();
+    }
+
+    @Override
+    public List<Student> get(String lastname) {
+        return userDAO.get(lastname);
+    }
+
+    @Override
+    public boolean create(Student student) {
+        return userDAO.create(student);
     }
 }
