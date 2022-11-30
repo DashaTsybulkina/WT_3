@@ -26,6 +26,10 @@ public class LoginView extends PresentationView{
         user.setLogin(login);
         user.setPassword(password);
         currentUser = service.login(user);
+        if (currentUser == null){
+            System.out.println("You is not in system!");
+            return new GuestView(new User());
+        }
         return switch (this.currentUser.getPermission()) {
             case "R" -> new UserView(currentUser);
             case "RW" -> new AdminView(currentUser);
